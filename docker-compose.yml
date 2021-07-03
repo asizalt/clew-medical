@@ -34,5 +34,21 @@ services:
       PGDATA: var/lib/postgresql/data/pgdata
     volumes:
       - ./data/postgres:/var/lib/postgresql/data/pgdata
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "5432:5432"
+
+  consumer:
+    build:
+      context: ./ConsumerService
+    environment:
+      RABBIT_HOST: rabbitmq
+      RABBIT_USER: admin
+      RABBIT_PASS: password
+      POSTGRES_HOST: postgresdb
+      POSTGRES_USER: admin
+      POSTGRES_DB: clew_medical
+      POSTGRES_PASSWORD: password
+    depends_on:
+      - rabbitmq
+      - postgresdb
