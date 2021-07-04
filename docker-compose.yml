@@ -1,18 +1,6 @@
 version: "3.8"
 
 services:
-#  consumer:
-#todo
-
-  publisher:
-    build:
-      context: ./PublisherService
-    environment:
-      RABBIT_HOST: rabbitmq
-      RABBIT_USER: admin
-      RABBIT_PASS: password
-    depends_on:
-      - rabbitmq
 
   rabbitmq:
     image: rabbitmq:3.8.1-management
@@ -39,6 +27,7 @@ services:
       - "5432:5432"
 
   consumer:
+    command: tail -f /dev/null
     build:
       context: ./ConsumerService
     environment:
@@ -49,6 +38,20 @@ services:
       POSTGRES_USER: admin
       POSTGRES_DB: clew_medical
       POSTGRES_PASSWORD: password
+    volumes:
+      - .:/deploy
     depends_on:
       - rabbitmq
       - postgresdb
+
+  publisher:
+    command: tail -f /dev/null
+    build:
+      context: ./PublisherService
+    depends_on:
+      - rabbitmq
+    environment:
+      RABBIT_HOST: rabbitmq
+      RABBIT_USER: admin
+      RABBIT_PASS: password
+

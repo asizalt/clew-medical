@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS product (
+CREATE TABLE IF NOT EXISTS events (
   product_id INT NOT NULL,
   medication_name varchar(250) NOT NULL,
   action_name varchar(250) NOT NULL,

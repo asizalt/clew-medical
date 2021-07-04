@@ -4,7 +4,9 @@ import json
 import os
 
 from aio_pika import connect, ExchangeType, Message, DeliveryMode
+import logging    # first of all import the module
 
+logging.basicConfig(filename='std.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
 
 async def main(loop):
     connection, exchange = await setup_rabbitmq(loop)
