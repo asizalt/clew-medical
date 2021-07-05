@@ -4,6 +4,6 @@ CREATE TABLE IF NOT EXISTS events (
   action_name varchar(250) NOT NULL,
   event_time TIMESTAMP,
   status varchar(250) NOT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (event_id)
 );
