@@ -39,7 +39,7 @@ services:
       POSTGRES_DB: clew_medical
       POSTGRES_PASSWORD: password
     volumes:
-      - .:/deploy
+      - ./ConsumerService:/deploy
     depends_on:
       - rabbitmq
       - postgresdb

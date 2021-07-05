@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e405f57-c3a8-472d-b07c-e0c58a5db475" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/PublisherService/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/clew-medical.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/clew-medical.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsumerService/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/ConsumerService/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsumerService/consumer/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ConsumerService/consumer/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublisherService/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PublisherService/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublisherService/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/PublisherService/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PublisherService/publisher/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/PublisherService/publisher/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/global/pg_control" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/global/pg_control" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/pg_stat_tmp/global.stat" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/pg_stat_tmp/global.stat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/pg_wal/000000010000000000000001" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/pg_wal/000000010000000000000001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/postmaster.pid" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/postmaster.pid" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/init.sql" afterDir="false" />
     </list>
@@ -113,6 +108,7 @@
       <updated>1625297306942</updated>
       <workItem from="1625316564345" duration="904000" />
       <workItem from="1625321349181" duration="4312000" />
+      <workItem from="1625497893654" duration="36000" />
     </task>
     <servers />
   </component>

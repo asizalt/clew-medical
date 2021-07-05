@@ -33,7 +33,7 @@ async def setup_rabbitmq(loop):
                 if queue.name in message.body.decode():
                     break
 
-    
+
     # await queue.basic_consume(queue='events', on_message_callback=callback, auto_ack=True)
     # return connection, exchange
 
