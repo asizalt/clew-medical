@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteMappingsManager">
+    <list>
+      <list>
+        <remote-mappings server-id="python@docker-compose://[/Users/imna/projects/clew-medical/docker-compose.yml]:publisher/python">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$/publisher" remote-root="/deploy/publisher" />
+            </list>
+          </settings>
+        </remote-mappings>
+      </list>
+    </list>
+  </component>
+</project>

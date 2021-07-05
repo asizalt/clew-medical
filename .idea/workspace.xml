@@ -1,7 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5e405f57-c3a8-472d-b07c-e0c58a5db475" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/1247" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/1247" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/1247_vm" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/1247_vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/1249" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/1249" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/1249_fsm" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/1249_fsm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/1249_vm" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/1249_vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/1259" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/1259" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/1259_vm" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/1259_vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2579" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2579" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2604" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2604" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2606" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2606" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2606_vm" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2606_vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2608" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2608" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2608_vm" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2608_vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2610" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2610" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2610_vm" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2610_vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2656" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2656" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2657" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2657" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2658" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2658" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2659" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2659" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2662" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2662" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2663" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2663" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2664" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2664" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2665" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2665" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2666" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2666" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2667" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2667" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2673" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2673" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2674" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2674" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2678" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2678" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2679" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2679" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2703" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2703" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/2704" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/2704" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/base/16384/3455" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/base/16384/3455" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/global/pg_control" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/global/pg_control" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/pg_stat_tmp/global.stat" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/pg_stat_tmp/global.stat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/pg_wal/000000010000000000000001" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/pg_wal/000000010000000000000001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/pg_xact/0000" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/pg_xact/0000" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/postgres/postmaster.pid" beforeDir="false" afterPath="$PROJECT_DIR$/data/postgres/postmaster.pid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/init.sql" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1unNHdD0IaHKub06oQGlNmCKTUA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager" selected="Python.main (1)">
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="clew-medical" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PublisherService/publisher" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PublisherService/publisher/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="clew-medical" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ConsumerService/consumer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ConsumerService/consumer/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e405f57-c3a8-472d-b07c-e0c58a5db475" name="Default Changelist" comment="" />
+      <created>1625297306942</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1625297306942</updated>
+      <workItem from="1625316564345" duration="904000" />
+      <workItem from="1625321349181" duration="4312000" />
+      <workItem from="1625497893654" duration="1870000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
