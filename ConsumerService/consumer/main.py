@@ -1,4 +1,9 @@
 import asyncio
+import json
+import routes
+from aiohttp import web
+from routes import setup_routes
+from utils import pretty_json
 import os
 import ast
 from dateutil import parser
@@ -9,21 +14,14 @@ from aio_pika import connect, ExchangeType, Message, DeliveryMode, IncomingMessa
 logging.basicConfig(filename='std.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
 logging.warning('This message will get logged on to a file')
 
-# async def on_message(message: IncomingMessage):
-#     """
-#     on_message doesn't necessarily have to be defined as async.
-#     Here it is to show that it's possible.
-#     """
-#     print(" [x] Received message %r" % message)
-#     print("Message body is: %r" % message.body)
-#     print("Before sleep!")
-#     await asyncio.sleep(1)  # Represents async I/O operations
-#     print("After sleep!")
 
-async def main(loop):
+
+async def main(app):
+    # web.run_app(init_app())
     db_connection = await db_connect()
-    channel, queue_connection = await setup_rabbitmq(loop)
+    channel, queue_connection = await setup_rabbitmq()
     await parse_messages(channel,queue_connection,db_connection)
+
 
 async def db_connect():
     conn = await asyncpg.connect(
@@ -35,11 +33,11 @@ async def db_connect():
     return conn
 
 
-async def setup_rabbitmq(loop):
+async def setup_rabbitmq():
     connection = await connect(host=os.environ.get('RABBIT_HOST'),
                                login=os.environ.get('RABBIT_USER'),
                                password=os.environ.get('RABBIT_PASS'),
-                               loop=loop
+                               # loop=loop
                                )
     # Creating a channel
     channel = await connection.channel()
@@ -84,11 +82,42 @@ async def process_message(db_connection,message):
         except Exception as e:
             print(e)
 
+async def start_background_tasks(app):
+    app['rmq_listener'] = asyncio.create_task(main(app))
+    app['pool'] = await asyncpg.create_pool(user='admin',
+                                            password='password',
+                                            database='clew_medical',
+                                            host='postgresdb'
+                                            )
+    # app.router.add_get("/", handle)
+    setup_routes(app)
+    # for route in routes.routes:
+    #     app.router.add_route(*route)
+
+
+async def handle(request):
+    pool = request.app['pool']
+    power = int(request.match_info.get('power', 10))
+
+    # Take a connection from the pool.
+    async with pool.acquire() as connection:
+        # Open a transaction.
+        async with connection.transaction():
+            # Run the query passing the request argument.
+            result = await connection.fetchval('select 2 ^ $1', power)
+            return web.Response(
+                text="2 ^ {} is {}".format(power, result))
+
+     # return web.json_response({'id':'asi'},dumps=pretty_json,)
+
 if __name__ == '__main__':
-    loop = asyncio.get_event_loop()
-    # loop.create_task(main(loop))
-    connection = loop.run_until_complete(main(loop))
-    loop.run_forever()
+    app = web.Application()
+    app.on_startup.append(start_background_tasks)
+    web.run_app(app)
+
+    # loop = asyncio.get_event_loop()
+    # loop.run_until_complete(main(loop))
+    # loop.run_forever()
 
     # try:
     #     loop.run_forever()
