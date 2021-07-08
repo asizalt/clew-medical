@@ -1,19 +1,12 @@
 import asyncio
-import json
-import routes
 from aiohttp import web
 from routes import setup_routes
-from utils import pretty_json
 import os
-import ast
-from dateutil import parser
+from validation import process_message
 import asyncpg
-import logging    # first of all import the module
 from aio_pika import connect, ExchangeType, Message, DeliveryMode, IncomingMessage
-
-logging.basicConfig(filename='std.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
-logging.warning('This message will get logged on to a file')
-
+import logging
+logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
 
 
 async def main(app):
@@ -25,10 +18,10 @@ async def main(app):
 
 async def db_connect():
     conn = await asyncpg.connect(
-                                user='admin',
-                                password='password',
-                                database='clew_medical',
-                                host='postgresdb'
+                                user=os.environ.get('POSTGRES_USER'),
+                                password=os.environ.get('POSTGRES_PASSWORD'),
+                                database=os.environ.get('POSTGRES_DB'),
+                                host=os.environ.get('POSTGRES_HOST')
                                 )
     return conn
 
@@ -63,31 +56,13 @@ async def parse_messages(channel,queue_connection,db_connection):
                if queue.name in message.body.decode():
                     break
 
-async def process_message(db_connection,message):
-    parsed_message = message.body.decode('UTF-8')
-    my_data = ast.literal_eval(parsed_message)
-    if 'p_id' in my_data.keys():
-        print(my_data['p_id'])
-        await asyncio.sleep(1)
-        date = parser.parse(my_data['event_time'])
-        date_new = date.replace(tzinfo=None)
-        try:
-            await db_connection.execute('''
-                    INSERT INTO events(p_id, medication_name,action_name,event_time) VALUES($1, $2, $3, $4)
-                ''',
-                                        int(my_data['p_id']),
-                                        my_data['medication_name'],
-                                        my_data['action'],
-                                        date_new)
-        except Exception as e:
-            print(e)
 
 async def start_background_tasks(app):
     app['rmq_listener'] = asyncio.create_task(main(app))
-    app['pool'] = await asyncpg.create_pool(user='admin',
-                                            password='password',
-                                            database='clew_medical',
-                                            host='postgresdb'
+    app['pool'] = await asyncpg.create_pool(user=os.environ.get('POSTGRES_USER'),
+                                            password=os.environ.get('POSTGRES_PASSWORD'),
+                                            database=os.environ.get('POSTGRES_DB'),
+                                             host=os.environ.get('POSTGRES_HOST')
                                             )
     # app.router.add_get("/", handle)
     setup_routes(app)
@@ -95,31 +70,12 @@ async def start_background_tasks(app):
     #     app.router.add_route(*route)
 
 
-async def handle(request):
-    pool = request.app['pool']
-    power = int(request.match_info.get('power', 10))
-
-    # Take a connection from the pool.
-    async with pool.acquire() as connection:
-        # Open a transaction.
-        async with connection.transaction():
-            # Run the query passing the request argument.
-            result = await connection.fetchval('select 2 ^ $1', power)
-            return web.Response(
-                text="2 ^ {} is {}".format(power, result))
-
      # return web.json_response({'id':'asi'},dumps=pretty_json,)
 
 if __name__ == '__main__':
+    logging.error("main has started")
     app = web.Application()
+    logging.error("web has started")
     app.on_startup.append(start_background_tasks)
     web.run_app(app)
 
-    # loop = asyncio.get_event_loop()
-    # loop.run_until_complete(main(loop))
-    # loop.run_forever()
-
-    # try:
-    #     loop.run_forever()
-    # finally:
-    #     loop.run_until_complete(connection.close())

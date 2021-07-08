@@ -1,8 +1,9 @@
-from views import  all_events,event_by_patient
+from views import  events,event_by_patient,event_patient_medication
 
 def setup_routes(app):
-    app.router.add_get('/api/events', all_events, name='all_events')
+    app.router.add_get('/api/events', events, name='events')
     app.router.add_get('/api/patient/{id}', event_by_patient, name='event_by_patient')
+    app.router.add_get('/api/patient/{patient_id}/medication/{medication_id}', event_patient_medication, name='event_patient_medication')
 
 # routes = [
 #     # ('POST', '/api/v1/users/registration/', views.registration),

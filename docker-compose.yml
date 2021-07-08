@@ -27,7 +27,6 @@ services:
       - "5432:5432"
 
   consumer:
-    command: tail -f /dev/null
     build:
       context: ./ConsumerService
     environment:
@@ -38,6 +37,7 @@ services:
       POSTGRES_USER: admin
       POSTGRES_DB: clew_medical
       POSTGRES_PASSWORD: password
+    command: python main.py
     volumes:
       - ./ConsumerService:/deploy
     ports:
