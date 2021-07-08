@@ -2,7 +2,8 @@ FROM python:3.7-slim
 
 ADD . /deploy
 
-RUN cd /deploy && \
-    pip install .
-#     rm -rf /build /deploy
-CMD ["consumer"]
+WORKDIR /deploy
+
+RUN pip install .
+
+WORKDIR /deploy/consumer

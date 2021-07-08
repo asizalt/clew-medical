@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 
-install_requires = ['aio_pika','aiopg']
+install_requires = ['aio_pika','asyncpg','python-dateutil','aiohttp','pytest','pytest-aiohttp']
 
 setup(
     name='consumer',
